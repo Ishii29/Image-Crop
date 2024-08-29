@@ -1,0 +1,167 @@
+﻿@page
+@model ImageCropModel
+@{
+    ViewData["Title"] = "Image Crop and Resize";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Crop and Resize</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" rel="stylesheet" />
+    <style>
+        .img-container {
+            max-width: 100%;
+            max-height: 100%;
+            position: relative;
+        }
+
+        #cropper-frame {
+            border: 2px dashed #666;
+            position: absolute;
+            z-index: 10;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <h1>@ViewData["Title"]</h1>
+    <input type="file" id="inputImage" accept="image/*">
+
+    <br>
+    <div class="img-container">
+        <img id="image" src="" alt="Picture">
+        <div id="cropper-frame"></div>
+    </div>
+    <br>
+    <label>Width: <input type="number" id="cropWidth" value="200"></label>
+    <label>Height: <input type="number" id="cropHeight" value="200"></label>
+    <button id="cropButton">Crop</button>
+    <button id="resizeButton">Resize</button>
+    <br>
+    <p>Current size: <span id="currentSize"></span></p>
+    <img id="croppedImage" alt="Cropped Image">
+    <br>
+    <button id="uploadButton">Upload</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+    <script>
+        let cropper;
+        let cropBoxData;
+        let canvasData;
+        let cropperFrame = document.getElementById('cropper-frame');
+        let cropWidth = document.getElementById('cropWidth');
+        let cropHeight = document.getElementById('cropHeight');
+        let image = document.getElementById('image');
+        let inputImage = document.getElementById('inputImage');
+        let croppedImage = document.getElementById('croppedImage');
+        let cropButton = document.getElementById('cropButton');
+        let resizeButton = document.getElementById('resizeButton');
+        let uploadButton = document.getElementById('uploadButton');
+        let currentSize = document.getElementById('currentSize');
+
+        inputImage.addEventListener('change', function (e) {
+            let files = e.target.files;
+            let done = function (url) {
+                inputImage.value = '';
+                image.src = url;
+                if (cropper) {
+                    cropper.destroy();
+                }
+                cropper = new Cropper(image, {
+                    ready: function () {
+                        cropper.setCropBoxData({
+                            width: parseInt(cropWidth.value),
+                            height: parseInt(cropHeight.value)
+                        });
+                        updateCurrentSize();
+                    },
+                    cropmove: function () {
+                        updateCurrentSize();
+                    }
+                });
+            };
+            if (files && files.length > 0) {
+                let file = files[0];
+                let reader = new FileReader();
+                reader.onload = function () {
+                    done(reader.result);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        cropButton.addEventListener('click', function () {
+            let canvas = cropper.getCroppedCanvas({
+                width: parseInt(cropWidth.value),
+                height: parseInt(cropHeight.value)
+            });
+            croppedImage.src = canvas.toDataURL();
+        });
+
+        resizeButton.addEventListener('click', function () {
+            cropper.setCropBoxData({
+                width: parseInt(cropWidth.value),
+                height: parseInt(cropHeight.value)
+            });
+        });
+
+        uploadButton.addEventListener('click', function () {
+            let formData = new FormData();
+
+            if (inputImage.files.length > 0) {
+                formData.append('OriginalImage', inputImage.files[0]);
+            } else {
+                console.error('No file selected');
+                return;
+            }
+
+            if (croppedImage.src) {
+                formData.append('CroppedImage', dataURLtoBlob(croppedImage.src, 'cropped.png'));
+            } else {
+                console.error('Cropped Image is not available.');
+                return;
+            }
+
+            console.log('FormData content:', Array.from(formData.entries()));
+
+            fetch('/ImageCrop?handler=Upload', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(result => {
+                    console.log('Success:', result);
+                    alert(result.message);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+
+        function updateCurrentSize() {
+            let data = cropper.getCropBoxData();
+            currentSize.textContent = `Width: ${data.width}, Height: ${data.height}`;
+        }
+
+        function dataURLtoBlob(dataurl, filename) {
+            let arr = dataurl.split(','), mime = arr[0].match(/:(.*?);/)[1],
+                bstr = atob(arr[1]), n = bstr.length, u8arr = new Uint8Array(n);
+            while (n--) {
+                u8arr[n] = bstr.charCodeAt(n);
+            }
+            let blob = new Blob([u8arr], { type: mime });
+            blob.lastModifiedDate = new Date();
+            blob.name = filename;
+            return blob;
+        }
+    </script>
+</body>
+</html>

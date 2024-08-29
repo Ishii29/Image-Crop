@@ -1,0 +1,42 @@
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\appsettings.json
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Image Crop.staticwebassets.runtime.json
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Image Crop.exe
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Image Crop.deps.json
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Image Crop.runtimeconfig.json
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Image Crop.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Image Crop.pdb
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Cropper.Blazor.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.AssemblyInfoInputs.cache
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.AssemblyInfo.cs
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.RazorAssemblyInfo.cache
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.RazorAssemblyInfo.cs
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\staticwebassets\msbuild.Image Crop.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\staticwebassets\msbuild.build.Image Crop.props
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Image Crop.props
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Image Crop.props
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\scopedcss\bundle\Image Crop.styles.css
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\scopedcss\projectbundle\Image Crop.bundle.scp.css
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.csproj.Up2Date
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\refint\Image Crop.dll
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.pdb
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\Image Crop.genruntimeconfig.cache
+C:\Users\User\source\repos\Image Crop\Image Crop\obj\Debug\net8.0\ref\Image Crop.dll
